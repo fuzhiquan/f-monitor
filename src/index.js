@@ -2,12 +2,14 @@
  * 1. 性能监控: preformance.js
  * 2. 静态资源加载情况: resource.js
  * 3. ajax监控: xhr.js
- * 4. 错误监控
+ * 4. 错误监控: errCatch.js
  * 5. 用户行为
  */
 import preformance from './preformance'
 import resource from './resource'
 import xhr from './xhr'
+import errCatch from './errCatch'
+
 function formatObj(obj) {
     const result = []
     for(let key in obj) {
@@ -31,5 +33,9 @@ resource.init(data => {
 })
 
 xhr.init(data => {
+    console.log(data)
+})
+
+errCatch.init(data => {
     console.log(data)
 })
