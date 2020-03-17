@@ -1,12 +1,13 @@
 /**
- * 1. 性能监控: preformance
- * 2. 静态资源加载情况: resource
- * 3. ajax监控
+ * 1. 性能监控: preformance.js
+ * 2. 静态资源加载情况: resource.js
+ * 3. ajax监控: xhr.js
  * 4. 错误监控
  * 5. 用户行为
  */
 import preformance from './preformance'
 import resource from './resource'
+import xhr from './xhr'
 function formatObj(obj) {
     const result = []
     for(let key in obj) {
@@ -25,6 +26,10 @@ preformance.init((data) => {
     c = null//释放局部变量c
 })
 
-resource.init((data) => {
+resource.init(data => {
+    console.log(data)
+})
+
+xhr.init(data => {
     console.log(data)
 })
